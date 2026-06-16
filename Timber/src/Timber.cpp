@@ -8,9 +8,23 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "Timber", sf::Style::Default, sf::State::Fullscreen);
 
+    // Background
     sf::Texture textureBackground("graphics\\background.jpg");
-
     sf::Sprite spriteBackground(textureBackground);
+
+    //Tree
+    sf::Texture textureTree("graphics\\tree.png");
+    sf::Sprite spriteTree(textureTree);
+    spriteTree.setScale({0.45f, 0.8f});
+    spriteTree.setPosition({500, 0});
+
+    //Cloud
+    sf::Texture textureCloud("graphics\\cloud.png");
+    sf::Sprite spriteCloud(textureCloud);
+
+    //Bee
+    sf::Texture textureBee("graphics\\bee.png");
+    sf::Sprite spriteBee(textureBee);
 
     //In Game Variables :
 
@@ -32,6 +46,10 @@ int main()
         window.clear();
 
         window.draw(spriteBackground);
+        window.draw(spriteCloud);
+        window.draw(spriteTree);
+        window.draw(spriteBee);
+        
 
         window.display();
     }
